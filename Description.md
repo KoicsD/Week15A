@@ -51,7 +51,9 @@ private void btnSave_Click(object sender, EventArgs e)
 
 ### Task
 
-In this exercise, you must reformat phone numbers into a standard `(###) ###-####` format. You can implement it by extending the previous WinForms application. As an input, you expect a string which matches the following Regex pattern
+In this exercise, you must reformat phone numbers into a standard `(###) ###-####` format.
+You can implement it by extending the previous WinForms application.
+As an input, you expect a string which matches the following Regex pattern:
 
 ```C#
 ^\(?(\d{3})\)?[\s\-]?(\d{3})\-?(\d{4})$
@@ -81,3 +83,27 @@ txtPhone.Text = ReformatPhone(txtPhone.Text)
 ```
 
 Of course you should execute this line only after the validation! 
+
+### Exercise 3: Convert a Text File to a Different Encoding Type
+
+In this exercise, you convert a text file to UTF-7.
+
+### Step by step
+
+{1} Use Visual Studio 2015 to create a blank console application.
+
+{2} Write code to read the **C:\boot.ini** file, and then write it to a file named **bootutf7.txt** using the UTF-7 encoding type.
+For example, the following code (which requires the **System.IO** namespace) would work:
+
+```C#
+StreamReader sr = new StreamReader(@"C:\boot.ini");
+StreamWriter sw = new StreamWriter("boot-utf7.txt", false, Encoding.UTF7);
+
+sw.WriteLine(sr.ReadToEnd());
+sw.Close();
+sr.Close();
+```
+
+{3} Run your application, and open the boot-utf7.txt file in Notepad.
+If the file was translated correctly, Notepad will display it with some invalid characters
+because Notepad does not support the UTF-7 encoding type.
