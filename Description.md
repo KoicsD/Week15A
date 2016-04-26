@@ -315,22 +315,3 @@ Serialize-People Tony 1923 4 22
 ```
 
 {8} Now run the command with no parameters to verify that deserialization works properly.
-
-```C#
-static void Main(string[] args) 
-{ 
-... 
-
- //search recursively for the mathing files 
- RecursiveSearch(FoundFiles, fileName, rootDir); 
-
- //list the found files 
- Console.WriteLine("Found {0} files.", FoundFiles.Count); 
-
- foreach (FileInfo fil in FoundFiles) 
- { 
- Console.WriteLine("{0}", fil.FullName); 
- }
-
- Console.ReadKey(); 
-```
