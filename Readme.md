@@ -20,3 +20,4 @@ As we got 4 topics, my solution contains the following projects:
 * Multithreading:
 	* [SimpleThreadingDemo](SimpleThreadingDemo/)
 	* [SingleInstanceExample](SingleInstanceExample/)
+	* [ThreadPoolDemo](ThreadPoolDemo/)
