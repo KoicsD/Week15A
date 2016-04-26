@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Serializing
 {
     [Serializable]
-    class Person: IDeserializationCallback
+    public class Person: /*IDeserializationCallback*/ ISerializable
     {
         public enum EGender: int { Male, Female }
         
@@ -44,6 +44,13 @@ namespace Serializing
             Gender = gender;
         }
 
+        public Person(SerializationInfo info, StreamingContext context)
+        {
+            Name = info.GetString("Name");
+            BirthDate = info.GetDateTime("BirthDate");
+            Gender = (EGender)info.GetInt32("Gender");
+        }
+
         void CalculateAge()
         {
             age = (int)((DateTime.Now - BirthDate).Days / 365.25);
@@ -54,9 +61,16 @@ namespace Serializing
             return string.Format("Person(Name: '{0}', Age: '{1}', Gender: '{2}')", Name, Age, Gender);
         }
 
-        void IDeserializationCallback.OnDeserialization(object sender)
+        /*void IDeserializationCallback.OnDeserialization(object sender)
         {
             CalculateAge();
+        }*/
+
+        void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("Name", Name);
+            info.AddValue("BirthDate", BirthDate);
+            info.AddValue("Gender", Gender);
         }
     }
 }

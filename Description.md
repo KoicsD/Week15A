@@ -267,3 +267,70 @@ void IDeserializationCallback.OnDeserialization(Object sender)
 // After deserialization, calculate the age
 CalculateAge();
 ```
+
+### Exercise 5: Update a Class to Use Custom Serialization
+
+### Task
+
+In this exercise, you will update a class to improve the efficiency of serialization while maintaining complete control over how data is stored and retrieved. You can continue from the C# project in the Lesson3-Serialize-People folder.
+
+### Step by step
+
+{1} Add the System.Runtime.Serialization namespace to the Person class.
+
+{2} Add the Serializable attribute to the Person class, and then build the project to ensure it compiles correctly.
+
+{3} Modify the Person class so that it implements ISerializable.
+
+{4} Add the GetObjectData method, which accepts a SerializationInfo object and a StreamingContext object, and adds items to be serialized to the SerializationInfo object. Add the name and dateOfBirth variables to the SerializationInfo object, but do not add the age variable. Your code could look like the following:
+
+```C#
+public virtual void GetObjectData(SerializationInfo info,
+StreamingContext context)
+{
+
+}
+```
+
+{5} Add the serialization constructor, which accepts a SerializationInfo object and a StreamingContext object, and then initializes member variables using the contents of the SerializationInfo object. Use the same element names you used in the previous step. After you have deserialized all variables, call the CalculateAge method to initialize the age variables. Your code could look like the following:
+
+```C#
+public Person(SerializationInfo info, StreamingContext context)
+{
+ info.AddValue("Name", name);
+ info.AddValue("DOB", dateOfBirth);
+
+ name = info.GetString("Name");
+ dateOfBirth = info.GetDateTime("DOB");
+ CalculateAge();
+}
+```
+
+{6} Build the project, and resolve any errors.
+
+{7} Open a command prompt to the build directory, and then run the following command:
+
+```
+Serialize-People Tony 1923 4 22
+```
+
+{8} Now run the command with no parameters to verify that deserialization works properly.
+
+```C#
+static void Main(string[] args) 
+{ 
+... 
+
+ //search recursively for the mathing files 
+ RecursiveSearch(FoundFiles, fileName, rootDir); 
+
+ //list the found files 
+ Console.WriteLine("Found {0} files.", FoundFiles.Count); 
+
+ foreach (FileInfo fil in FoundFiles) 
+ { 
+ Console.WriteLine("{0}", fil.FullName); 
+ }
+
+ Console.ReadKey(); 
+```

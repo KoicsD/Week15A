@@ -2,6 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 namespace Serializing
 {
@@ -94,9 +95,10 @@ namespace Serializing
                 }
                 
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException e)
             {
-                Console.WriteLine("Invalid date!");
+                Console.WriteLine("An argument is out-of-range! Message:");
+                Console.WriteLine(e.Message);
             }
             catch (FileNotFoundException e)
             {
@@ -116,6 +118,36 @@ namespace Serializing
             {
                 Console.WriteLine("A SerializationException occurred! Message:");
                 Console.WriteLine(e.Message);
+            }
+            catch (ApplicationException e)
+            {
+                if (e is System.Reflection.TargetException || e is System.Reflection.TargetInvocationException || e is System.Reflection.TargetParameterCountException)
+                {
+                    Console.WriteLine("A reflection-related exception occurred (probably while deserializing)!");
+                }
+                else
+                {
+                    Console.WriteLine("Unknown Exception occurred!");
+                }
+                Console.WriteLine("Type: {0}", e.GetType());
+                Console.WriteLine("Message:");
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Stack trace:");
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (InvalidCastException e)
+            {
+                Console.WriteLine("A cast-exception occurred! Message:");
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Unknown Exception occurred!");
+                Console.WriteLine("Type: {0}", e.GetType());
+                Console.WriteLine("Message:");
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Stack trace:");
+                Console.WriteLine(e.StackTrace);
             }
         }
     }
