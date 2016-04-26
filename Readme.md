@@ -11,8 +11,12 @@ You can find some task-description here:
 * [Serialization](descSerializing.md)
 * [Multithreading](descThreading.md)
 
-As we got 4 topics, my solution contains 4 projects:
-* [Serializing](Serialiying/) (Serialization)
-* [InputValidating](InputValidating/) (Regular Expressions)
-* [EncodingDemo](EncodingDemo/) (FIle-Encoding)
-* [SimpleThreadingDemo](SimpleThreadiDemo/) (Multithreading)
+As we got 4 topics, my solution contains the following projects:
+* Regular Expressions and File-Encoding:
+	* [InputValidating](InputValidating/)
+	* [EncodingDemo](EncodingDemo/)
+* Serialization:
+	* [Serializing](Serialiying/)
+* Multithreading:
+	* [SimpleThreadingDemo](SimpleThreadingDemo/)
+	* [SingleInstanceExample](SingleInstanceExample/)
