@@ -215,3 +215,55 @@ Serialize-People
 ```
 
 Note that the Serialize-People command displays the name, date of birth, and age of the previously serialized Person object.
+
+### Exercise 4: Optimize a Class for Deserialization
+
+### Task
+
+In this exercise, you modify a class to improve the efficiency of serialization.
+
+### Step by step
+
+{1} Open the SerializePeople project you modified in Exercises 1, 2, and 3.
+
+{2} Modify the Person class to prevent the age member from being serialized.
+To do this, add the NonSerialized attribute to the member, as the following code demonstrates:
+
+```C#
+[NonSerialized] public int age;
+```
+
+{3} Build and run the project with no command-line parameters.
+Note that the Serialize-People command displays the name and date of birth of the previously serialized Person object.
+However, the age is displayed as zero.
+
+{4} Modify the Person class to implement the IDeserializationCallback interface, as the following code snippet demonstrates:
+
+```C#
+namespace Serialize_People
+{
+ [Serializable]
+ class Person : IdeserializationCallback
+
+ {
+
+ }
+
+}
+```
+
+{5} Add the IDeserializationCallback.OnDeserialization method to the Person class. Your code could look like the following:
+
+```C#
+void IDeserializationCallback.OnDeserialization(Object sender)
+{
+
+}
+```
+
+{6} Build and run the project with no command-line parameters. Note that the Serialize-People command displays the name, date of birth, and age of the previously serialized Person object. The age displays properly this time because it is calculated immediately after deserialization.
+
+```C#
+// After deserialization, calculate the age
+CalculateAge();
+```

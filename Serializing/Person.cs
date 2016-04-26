@@ -1,32 +1,35 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Serializing
 {
     [Serializable]
-    class Person
+    class Person: IDeserializationCallback
     {
         public enum EGender: int { Male, Female }
-
-        private string name;
+        
         private DateTime birthDate;
-        private EGender gender;
+        [NonSerialized] int age;
 
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        public string Name { get; set; }
+        public EGender Gender { get; set; }
 
         public DateTime BirthDate
         {
-            get { return birthDate; }
-            set { birthDate = value; }
+            get
+            {
+                return birthDate;
+            }
+            set
+            {
+                birthDate = value;
+                CalculateAge();
+            }
         }
 
-        public EGender Gender
+        public int Age
         {
-            get { return gender; }
-            set { gender = value; }
+            get { return age; }
         }
 
         public Person()
@@ -36,14 +39,24 @@ namespace Serializing
 
         public Person(string name, DateTime birthDate, EGender gender)
         {
-            this.name = name;
-            this.birthDate = birthDate;
-            this.gender = gender;
+            Name = name;
+            BirthDate = birthDate;
+            Gender = gender;
+        }
+
+        void CalculateAge()
+        {
+            age = (int)((DateTime.Now - BirthDate).Days / 365.25);
         }
 
         public override string ToString()
         {
-            return string.Format("Person(Name: '{0}', BirthDate: '{1}', Gender: '{2}')", name, birthDate, gender);
+            return string.Format("Person(Name: '{0}', Age: '{1}', Gender: '{2}')", Name, Age, Gender);
+        }
+
+        void IDeserializationCallback.OnDeserialization(object sender)
+        {
+            CalculateAge();
         }
     }
 }

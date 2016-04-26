@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -9,7 +8,7 @@ namespace Serializing
     class Program
     {
         static string path = "person.dat";
-        static BinaryFormatter formatter = new BinaryFormatter();
+        static IFormatter formatter = new BinaryFormatter();
         enum Mode { Serialize, Deserialize }
 
         static bool TryParseArgs(string[] args, out Mode mode, out string name, out int year, out int month, out int day, out Person.EGender gender)
