@@ -11,6 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleThreadingDemo", "Simp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{88D0F8F8-053B-4DD8-A3FF-979994D06E4F}"
 	ProjectSection(SolutionItems) = preProject
+		Conclusion.md = Conclusion.md
 		descRegexp.md = descRegexp.md
 		descSerializing.md = descSerializing.md
 		descThreading.md = descThreading.md

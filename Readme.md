@@ -11,6 +11,8 @@ You can find some task-description here:
 * [Serialization](descSerializing.md)
 * [Multithreading](descThreading.md)
 
+My conclusion can be found [here](Conclusion.md).
+
 As we got 4 topics, my solution contains the following projects:
 * Regular Expressions and File-Encoding:
 	* [InputValidating](InputValidating/)
