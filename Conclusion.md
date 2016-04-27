@@ -41,5 +41,5 @@ Overall, I've found Week 15A useful.
 
 ----
 
-Prev: [MultiThreading](descThreading.md)  
+Prev: [Summary](descSummary.md)  
 [Back to README](README.md)
