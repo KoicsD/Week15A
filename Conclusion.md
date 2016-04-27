@@ -41,5 +41,5 @@ Overall, I've found Week 15A useful.
 
 ----
 
-Prev: [Summary](descSummary.md)  
+Prev: [Summary](Description/Summary.md)  
 [Back to README](README.md)

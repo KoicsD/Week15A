@@ -206,6 +206,6 @@ Serialize-People Tony 1923 4 22
 
 ----
 
-Next: [MultiThreading](descThreading.md)  
-Prev: [Regular Expressions](descRegexp.md)  
-[Back to README](README.md)
+Next: [MultiThreading](Threading.md)  
+Prev: [Regular Expressions](Regexp.md)  
+[Back to README](../README.md)

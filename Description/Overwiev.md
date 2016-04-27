@@ -25,7 +25,7 @@ A pattern consists of one or more character literals, operators, or constructs.
 
 The learning plan is this week the following:
 
-![](Description/LearningPlan.png)
+![](LearningPlan.png)
 
 ----
 
@@ -49,5 +49,5 @@ https://msdn.microsoft.com/en-us/library/ms228595.aspx
 
 ----
 
-Next: [Regular Expressions](descRegexp.md)  
-[Back to README](README.md)  
+Next: [Regular Expressions](Regexp.md)  
+[Back to README](../README.md)  

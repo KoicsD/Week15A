@@ -196,6 +196,6 @@ Note that some of the work items are executed on different threads.
 
 ----
 
-Next: [Summary](descSummary.md)  
-Prev: [Serialization](descSerializing.md)  
-[Back to README](README.md)
+Next: [Summary](Summary.md)  
+Prev: [Serialization](Serializing.md)  
+[Back to README](../README.md)

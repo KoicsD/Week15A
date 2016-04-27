@@ -8,10 +8,10 @@ Our Week-15A tasks at CodeCool were about 4 C#-related topics:
 * a bit of [File-Encoding](https://msdn.microsoft.com/en-us/library/system.text.encoding%28v=vs.110%29.aspx)
 * [Multithreading](http://www.tutorialspoint.com/csharp/csharp_multithreading.htm)
 
-[You can find some task-description here](descOverwiev.md):
-* [Regular Expressions and File-Encoding](descRegexp.md)
-* [Serialization](descSerializing.md)
-* [Multithreading](descThreading.md)
+[You can find some task-description here](Description/Overwiev.md):
+* [Regular Expressions and File-Encoding](Description/Regexp.md)
+* [Serialization](Description/Serializing.md)
+* [Multithreading](Description/Threading.md)
 
 My conclusion can be found [here](Conclusion.md).
 

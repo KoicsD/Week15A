@@ -46,6 +46,6 @@ requirements.
 
 ----
 
-Next: [What I've done](Conclusion.md)  
-Prev: [MultiThreading](descThreading.md)  
-[Back to README](README.md)
+Next: [What I've done](../Conclusion.md)  
+Prev: [MultiThreading](Threading.md)  
+[Back to README](../README.md)

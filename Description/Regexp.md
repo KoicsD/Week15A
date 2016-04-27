@@ -6,7 +6,7 @@
 
 Using Visual Studio, create a new windows application project, and create a basic form, which prompts the user his/her name, e-mail address and phone number.
 
-![](Description/egy.png.jpg)
+![](egy.png.jpg)
 
 After clicking the save button, evaluate the input if the phone number and e-mail address are valid.
 
@@ -112,6 +112,6 @@ because Notepad does not support the UTF-7 encoding type.
 
 ----
 
-Next: [Serialization](descSerializing.md)  
-Prev: [Overwiev](descOverwiev.md)  
-[Back to README](README.md)
+Next: [Serialization](Serializing.md)  
+Prev: [Overwiev](Overwiev.md)  
+[Back to README](../README.md)
